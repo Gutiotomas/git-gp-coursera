@@ -1,9 +1,9 @@
 from database import get_db, startup_event
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from models import Item
 app = FastAPI()
 app.add_event_handler("startup", startup_event)
-@app.post("/items/")
+@app.post("/items/",  statuscode=201)
 def create_item(item:Item):
     conn = get_db()
     cursor = conn.cursor()
