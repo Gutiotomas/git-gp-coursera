@@ -9,4 +9,4 @@ def startup_event():
     conn.execute(
         "CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, name TEXT, price REAL, is_offer INTEGER)")
     conn.commit()
-    logging.debug("Database created!")
+    print("Database created!")
